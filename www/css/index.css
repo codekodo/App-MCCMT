@@ -40,7 +40,10 @@ body {
 /* Sticky footer styles
 -------------------------------------------------- */
 html {
-  position: relative;
+  position: absolute;
+  top:0;
+  left:0;
+  min-width:100%;
   min-height: 100%;
 }
 body {
