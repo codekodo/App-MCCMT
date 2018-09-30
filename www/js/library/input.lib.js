@@ -76,7 +76,7 @@ function PlayerNameForm()
       ResetField('player_name_'+a); //remove previous string ?
       //var OldName=$('#player_name_'+a).val();
       //if(OldName===undefined) {OldName='';}
-      Html+=LabelInputToHtml('text','player_name_'+a,'',10,MessageDictionnary('Joueur')+' '+(a+1),MessageDictionnary('Les noms en double seront supprimes (saisir des caracteres)'));//<div id="message_'+a+'" class="error"></div>
+      Html+=LabelInputToHtml('text','player_name_'+a,'',30,MessageDictionnary('Joueur')+' '+(a+1),MessageDictionnary('Les noms en double seront supprimes (saisir des caracteres)'));//<div id="message_'+a+'" class="error"></div>
       Html+='<div class="fclear"></div>';
    }
    return Html;

@@ -51,6 +51,22 @@ body {
   margin-top: 80px;
   margin-bottom: 80px;
 }
+
+#apropos {
+	float:right;
+	padding:15px 20px 0px 0px;"
+	text-decoration:none;
+}
+
+#apropos a {
+	color:gray;
+}
+
+#apropos a:hover {
+	color:gray;
+	text-decoration:none;
+}
+
 #footer {
   position: fixed;
   bottom: 0;

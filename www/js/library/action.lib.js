@@ -419,9 +419,11 @@ function AllPlayerFormToHtml()
 {
 	var Html = '';
     //create player form(s)
+	Html +='<div style="text-align:center;">';
 	for(var a=0; a<Players.length;a++) {
 		Html+=Players[a].ToHtml();  
 	}
+	Html += '<div>';
 	if (Players.length == 1) {
 		Html += '<div style="clear:both;padding:10px 0px 0px 0px;">';
 		Html += '<a class="btn btn-default" style="margin:1%;height:35px;width:31%" href="#" role="button" onclick="saisie(\'7\')"><b>7</b></a>';
@@ -1229,12 +1231,14 @@ function FormChangePlayerData()
 {
    //loop player and show name + score + is active
    var Html='<div class="title2">'+MessageDictionnary('Mise &agrave; jour nom et score des joueurs')+'</div><div>';
+
    for(var a=0; a<Players.length;a++)
    {
-      Html+=InputToHtml('text','new_player_name_'+a, $('#box-player-name-'+a).html(),10,''); 
-      Html+=InputToHtml('text','new_player_score_'+a, $('#box-player-score-'+a).html(),2,'');  
-      Html+='<br/>';    
-   }
+	  Html+=InputToHtml('text','new_player_name_'+a, $('#box-player-name-'+a).html(),10,''); 
+	  Html+=InputToHtml('text','new_player_score_'+a, $('#box-player-score-'+a).html(),2,'');  
+	  Html+='<br/>';    
+   }	   
+
    Html+=ButtonNextStep('do_change_player_data', MessageDictionnary('update'))+'</div>';
    return Html;
 }
@@ -1263,7 +1267,6 @@ function DoChangePlayerData()
    //loop on new data fields and update player fields
    for(var a=0; a<Players.length;a++)
    {
-      
       $('#box-player-name-'+a).html($('#new_player_name_'+a).val());
       $('#box-player-score-'+a).html(Math.floor($('#new_player_score_'+a).val()));
       SetName.apply(Players[a], [$('#new_player_name_'+a).val()]);
